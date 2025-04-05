@@ -1,2 +1,7 @@
 <p>atributo works!</p>
-<p [ngClass]="{'info': true}">Mensaje importante</p>
+<p [ngClass]="{'info': messageType === 1, 'error': messageType !== 1}">Mensaje importante</p>
+<p [ngStyle]="{'color': messageType === 1 ? 'green' : 'red'}">Mensaje no tan importante</p>
+
+<input type="text" [(ngModel)]="inputValue">
+
+valor actual del input {{inputValue}}

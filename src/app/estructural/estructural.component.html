@@ -1,1 +1,22 @@
 <p>estructural works!</p>
+
+<div class="error" *ngIf="isError">
+    Mensaje de error: Algo salio mal
+</div>
+
+
+<button (click)="showError()">Mostrar Error</button>
+
+<ul>
+    <li *ngFor="let section of sections">{{section}}</li>
+</ul>
+
+<ul>
+    <li *ngFor="let section1 of sections1">{{section1.name}} ({{section1.duracion}})</li>
+</ul>
+
+<ng-template #noContent>
+    Contenido no disponible
+</ng-template>
+
+<ng-container *ngTemplateOutlet="isError ? noContent : null"></ng-container>
