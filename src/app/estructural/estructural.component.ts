@@ -41,7 +41,9 @@ export class EstructuralComponent {
     
     
   }
+
   showError() {
     this.isError = true;
   }
+  
 }
