@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EstadosPipe } from './estados.pipe';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 @Component({
   selector: 'app-pipes',
   standalone: true,
-  imports: [CommonModule, EstadosPipe],
+  imports: [CommonModule, EstadosPipe, RouterLink, RouterLinkActive],
   templateUrl: './pipes.component.html',
   styleUrl: './pipes.component.scss'
 })
