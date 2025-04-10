@@ -15,5 +15,10 @@ export const routes: Routes = [
         children: [
         {path: 'nueva', component: NuevaCompraComponent},
         {path: 'historial', component: HistorialCompraComponent}
-    ]}
+    ]},
+    {
+        path: 'venta',
+        loadChildren: () =>
+            import('./venta/venta.module').then((m) => m.VentaModule),
+    },
 ];
