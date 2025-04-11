@@ -5,12 +5,13 @@ import { EstructuralComponent } from "./estructural/estructural.component";
 import { PipesComponent } from "./pipes/pipes.component";
 import { ListadoComponent } from "./compra/listado/listado.component";
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "./header/header.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AtributoComponent, EstructuralComponent, PipesComponent, ListadoComponent, RouterModule, CommonModule],
+  imports: [RouterOutlet, AtributoComponent, EstructuralComponent, PipesComponent, ListadoComponent, RouterModule, CommonModule, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

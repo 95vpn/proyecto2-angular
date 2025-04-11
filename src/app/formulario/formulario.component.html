@@ -1,1 +1,12 @@
 <p>formulario works!</p>
+<div>
+    <input type="text" placeholder="Nombre" [formControl]="name"> 
+    <pre><code>{{name.value |json}}</code></pre>
+
+</div>
+
+<div>
+
+    <input type="checkbox" [formControl]="isChecked">
+    <pre><code>{{isChecked.value | json}} </code></pre>
+</div>

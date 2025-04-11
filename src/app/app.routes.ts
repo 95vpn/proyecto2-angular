@@ -5,6 +5,7 @@ import { ListadoComponent } from './compra/listado/listado.component';
 import { NuevaCompraComponent } from './compra/nueva-compra/nueva-compra.component';
 import { HistorialCompraComponent } from './compra/historial-compra/historial-compra.component';
 import { authGuard } from './auth.guard';
+import { FormularioComponent } from './formulario/formulario.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'pipes', pathMatch: 'full'},
@@ -21,4 +22,5 @@ export const routes: Routes = [
         loadChildren: () =>
             import('./venta/venta.module').then((m) => m.VentaModule),
     },
+    {path: 'formularios', component: FormularioComponent},
 ];
