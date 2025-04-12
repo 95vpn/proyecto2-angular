@@ -1,12 +1,34 @@
 <p>formulario works!</p>
-<div>
-    <input type="text" placeholder="Nombre" [formControl]="name"> 
-    <pre><code>{{name.value |json}}</code></pre>
 
-</div>
+<form [formGroup]="form">
+    <div>
+        <input 
+        type="text" 
+        placeholder="Nombre" 
+        formControlName="name"> 
+        <!-- <pre> -->
+            <!-- <code> -->
+                {{form.get('name')?.value }}
+            <!-- </code> -->
+        <!-- </pre> -->
+    
+    </div>
+    
+    <div>
+        <input 
+        type="checkbox" 
+        formControlName="isChecked">
+        <!-- <pre> -->
+            <!-- <code> -->
+                {{form.get('isChecked')?.value }} 
+            <!-- </code> -->
+        <!-- </pre> -->
+    </div>
+</form>
+<button [disabled]="form.get('name')?.errors"></button>
 
-<div>
 
-    <input type="checkbox" [formControl]="isChecked">
-    <pre><code>{{isChecked.value | json}} </code></pre>
-</div>
+
+
+
+
