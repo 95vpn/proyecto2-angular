@@ -6,12 +6,13 @@ import { PipesComponent } from "./pipes/pipes.component";
 import { ListadoComponent } from "./compra/listado/listado.component";
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./header/header.component";
-
+import { HttpClientModule } from '@angular/common/http';
+import { TodosComponent } from './todos/todos.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AtributoComponent, EstructuralComponent, PipesComponent, ListadoComponent, RouterModule, CommonModule, HeaderComponent],
+  imports: [RouterOutlet, AtributoComponent, EstructuralComponent, PipesComponent, ListadoComponent, RouterModule, CommonModule, HeaderComponent, HttpClientModule, TodosComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

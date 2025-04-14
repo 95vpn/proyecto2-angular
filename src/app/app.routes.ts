@@ -6,6 +6,7 @@ import { NuevaCompraComponent } from './compra/nueva-compra/nueva-compra.compone
 import { HistorialCompraComponent } from './compra/historial-compra/historial-compra.component';
 import { authGuard } from './auth.guard';
 import { FormularioComponent } from './formulario/formulario.component';
+import { TodosComponent } from './todos/todos.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'pipes', pathMatch: 'full'},
@@ -23,4 +24,5 @@ export const routes: Routes = [
             import('./venta/venta.module').then((m) => m.VentaModule),
     },
     {path: 'formularios', component: FormularioComponent},
+    {path: 'todos', component: TodosComponent},
 ];
