@@ -1,24 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from './todos.service';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-todos',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './todos.component.html',
   styleUrl: './todos.component.scss'
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent  {
+
+  todos: any[] = [];
 
   constructor(private todoService: TodosService) { }
 
 
   ngOnInit(): void {
-    this.todoService.getTodos().subscribe( res => {
+    this.todoService.getTodos().subscribe( (res: any) => {
       console.log(res);
-    }); 
 
+      this.todos = res;
+
+      console.log(this.todos);
+    }); 
   }
+  
 }
