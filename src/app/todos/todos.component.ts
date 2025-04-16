@@ -26,6 +26,10 @@ export class TodosComponent  {
 
       console.log(this.todos);
     }); 
+
+    this.todoService.getComments(1).subscribe((res) => console.log('Comments: ', res));
+
+    this.todoService.getPost().subscribe((res) => console.log('Posts: ', res));
   }
   
 }
