@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,9 @@ import { Injectable } from '@angular/core';
 })
 export class TodosService {
 
-  
+  postSource = new Subject();
+  posts$ = this.postSource.asObservable();
+
   constructor(private http: HttpClient) { }
 
   getTodos() {
