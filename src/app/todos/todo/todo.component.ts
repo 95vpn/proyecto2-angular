@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../todos.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-todo',
@@ -14,7 +15,13 @@ export class TodoComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.todoService.posts$.subscribe((res) => {
+    this.todoService.posts$.pipe(
+      map( res => {
+        console.log(res);
+        res = ['uno', 'dos', 'tres', 'cuatro'];
+        return res;
+      })
+    ).subscribe((res) => {
       console.log('Nueva data:', res);
     })
   }

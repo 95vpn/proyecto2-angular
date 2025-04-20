@@ -37,8 +37,10 @@ export class TodosComponent  {
     // this.todoService.getPost().subscribe((res) => console.log('Posts: ', res));
 
   }
+
   updatePost() {
-    this.todoService.postSource.next('informacion');
+    this.todoService.postSource.next([1,2,3,4,5,6,6]);
+
   }
   
 }
