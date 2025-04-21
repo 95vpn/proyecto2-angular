@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TodosService } from '../todos.service';
-import { map } from 'rxjs';
+import { map, tap } from 'rxjs';
+
 
 @Component({
   selector: 'app-todo',
@@ -16,10 +17,12 @@ export class TodoComponent implements OnInit{
   ngOnInit(): void {
 
     this.todoService.posts$.pipe(
-      map( res => {
+      map( (res: number[]) => {
         console.log(res);
-        res = ['uno', 'dos', 'tres', 'cuatro'];
-        return res;
+        return res.filter( num => num > 3 );
+      }),
+      tap( (res) =>{
+        console.log("desde el tap: ", res);
       })
     ).subscribe((res) => {
       console.log('Nueva data:', res);

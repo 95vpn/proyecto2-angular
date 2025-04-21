@@ -8,7 +8,7 @@ import { Subject } from 'rxjs';
 })
 export class TodosService {
 
-  postSource = new Subject();
+  postSource = new Subject<number[]>();
   posts$ = this.postSource.asObservable();
 
   constructor(private http: HttpClient) { }
